@@ -1,0 +1,246 @@
+/* Reset some default styles */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+main {
+    padding: 1rem;
+    text-align: justify;
+}
+
+/* Header styles */
+header {
+    background: #4CAF50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    gap: auto;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.header-flex  {
+    margin: 0;
+    font-size: 2rem;
+    flex-shrink: 0;
+    background-color: transparent;
+    width: 65%;
+    text-align: left;
+    white-space: nowrap;
+    display: block;
+}
+
+/* Navigation styles */
+nav {
+    background: transparent;
+    width: 35%;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    padding: 0;
+    text-decoration: none;
+    text-align: center;
+    }
+
+nav a:hover {
+    background: #559908;
+}
+
+/* Desktop: horizontal navbar */
+nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1%;
+    list-style: none;
+    padding: 0;
+    min-width: 0;
+    width: auto;
+    position: static;
+    align-items: center;
+}
+
+nav ul li {
+    width: 5rem;
+    margin: 0 1px;
+    background-color: transparent;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    transition: background 0.2s;
+    display: block;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Main layout using Grid */
+.main {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+/* Sidebar styles */
+.sidebar {
+    background: #f4f4f4;
+    padding: 1rem;
+}
+
+/* Content area styles */
+.content {
+    background: #fff;
+    padding: 1rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+
+}   
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #333;
+    color: white;
+}
+
+img {
+    width: 30vw;
+    height: auto;   
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .main {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+/* Hamburger menu pure CSS (checkbox hack) */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    top: auto;
+    z-index: 2;
+}
+
+.nav-toggle-label span {
+    display: block;
+    width: 28px;
+    height: 4px;
+    margin: 6px 0;
+    background: #fff;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* Mobile: hamburger menu */
+@media (max-width: 759px) {
+    body {
+        /* horizontal-scroll: hidden; */
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    header {
+        display: flex;
+        gap: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%
+    }
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+    }
+    .nav-toggle-label {
+        display: block;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 56px;
+        z-index: 1;
+        display: none;
+    }
+
+    nav ul {
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+    }
+
+    li a{
+        width: 100%;
+        border-bottom: #e7c6c6 solid 1px;
+    }
+
+    nav ul li a{
+        color: #3a2626;
+        border-bottom: #e7c6c6 solid 1px;
+        text-align: center;
+    }
+
+    .nav-toggle:checked + .nav-toggle-label + ul {
+        display: flex;
+    }
+
+    nav a:hover{
+    background: lab(95.69% -4.77 5.92);
+    }
+}
+
+@media (max-width: 456px) {
+    .header-flex{
+        width: 45%;
+        white-space: wrap;
+        overflow: hidden;
+        font-size: 1.5rem;
+        text-align: left;
+    }
+
+}
+
+/* ...existing code... */
+
+/* Ensure h1 doesn't take full width */
+.header-flex h1 {
+    margin: 0;
+    font-size: 2rem;
+    flex-shrink: 0;
+
+}
+
